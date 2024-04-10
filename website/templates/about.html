@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About us</title>
-</head>
-<body>
+{% extends 'base_template.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Біз туралы</h2>
+          <p>Бұл өз клиенттеріне ауруларды диагностикалаудан бастап пациенттерді оңалтуға дейінгі медициналық көмектің толық циклін қамтамасыз ететін көп салалы медициналық орталық.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h3>МИССИЯ. БІЗ ТҰРҒАН ҚОҒАМҒА ЖОҒАРЫ БІЛІКТІ АҚЫЛЫ МЕДИЦИНАЛЫҚ КӨМЕК КӨРСЕТУ.</h3>
+            <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
+            <p>«Клиника» клиникасы Алматы қаласындағы 5 жылдан астам тәжірибесі бар ірі жекеменшік медициналық компания
+болып табылады. 500-ден астам қызметкер күн сайын жүздеген клиенттер мен компанияларға қызмет көрсетеді.
+Клиникада жетекші шетелдік өндірушілердің заманауи жабдықтары, үлкен тәжірибесі бар жоғары білікті
+қызметкерлер бар, сонымен қатар біз басқарудың және тұтынушыларға қызмет көрсетудің заманауи әдістерін қолданамыз.
+</p>
+            </div>
+          <div class="col-lg-6">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                  НЕГІЗГІ ҚҰНДЫЛЫҚТАР – біздің ортақ құндылықтарымыз, «біз шынымен сенетін нәрсе».
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Біз бизнеспен айналысамыз, оның басты мақсаты адам денсаулығын сақтау және жақсарту.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Біздің барлық әрекеттеріміз осы мақсатқа жетудегі, ауруларды жеңудегі және олардың алдын алудағы табыспен өлшенуі керек.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Жоғары сапалы қызметтер мен инновацияларды құруға қолайлы ішкі атмосфераны құру. Прогресті ынталандыру.</li>
+              </ul>
+              <p>Инновациялар мен кәсіби кадрларды дайындау арқылы Қазақстандағы медицина саласында №1 бол!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4 align-items-center">
+
+          <div class="col-lg-6">
+            <img src="{% static "img/img_4.png" %}" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="170" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Маман</strong> клиникада қызмет етеді</p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="52100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Клиенттер</strong> жоғары сапалы ем алды</p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="139" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Кабинет</strong> технологиямен жабдықталған</p>
+            </div><!-- End Stats Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+</main>
+{% endblock %}
