@@ -43,19 +43,11 @@ def about_team(request):
 
 
 def post_new(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.title = request.POST['title']
-            post.description = request.POST['description']
-            post.text = request.POST['text']
-            post.date_published = datetime.now()
-            post.save()
-            return redirect('news', pk=post.pk)
-    else:
-        form = PostForm()
-    return render(request, 'post_edit.html', {'form': form})
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {"form": form}
+    return render(request, "create_post.html", context)
 
 
 def post_edit(request, pk):

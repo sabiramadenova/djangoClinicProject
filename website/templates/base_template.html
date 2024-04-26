@@ -57,31 +57,21 @@
     </div>
   </section><!-- End Top Bar -->
 
-  <header id="header" class="header d-flex align-items-center">
+    {% if request.user.is_authenticated %}
+        {% include "authed_navbar.html" %}
+    {% else %}
+        {% include "navbar.html" %}
+    {% endif %}
 
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="http://localhost:8000/" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Клиника<span>.</span></h1>
-      </a>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{% url 'home'%}">Бастапқы бет</a></li>
-          <li><a href="{% url 'services' %}">Қызметтер</a></li>
-          <li><a href="{% url 'about' %}">Біз туралы</a></li>
-          <li><a href="{% url 'about_team'%}">Біздің мамандар</a></li>
-          <li><a href="{% url 'news'%}">Жаңалықтар</a></li>
-          <li><a href="{% url 'contact' %}">Байланыс</a></li>
-        </ul>
-      </nav><!-- .navbar -->
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  {% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+  {% endif %}
 
-    </div>
-  </header><!-- End Header -->
-  <!-- End Header -->
   <main>
     {% block content %}
     {% endblock %}
